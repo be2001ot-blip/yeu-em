@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>tỏ tình</title>
+        <style>
+            body {
+                 background:linear-gradient(135deg, pink, #ffb6c1);
+                 height: 100vh;
+                 margin: 0;
+                 overflow: hidden;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 height: 100vh;
+                 font-family: Arial;
+            }
+            
+            .box {
+                 background: white;
+                 padding: 30px;
+                 border-radius: 20px;
+                 text-align: center;
+                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                 position: relative;
+                 z-index: 10;
+            }
+
+            h1 {
+                color: red;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 18px;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+
+            .yes {
+                background: red;
+                color: white;
+            }
+            .no {
+               background: gray;
+               color: white;
+               position: absolute;
+            }
+            /* Trái tim */
+            .heart {
+                position: absolute;
+                color: red;
+                font-size: 24px;
+                animation: bayLen 2s linear forwards;
+            }
+            @keyframes bayLen {
+                0% {
+                     opacity: 1;
+                     transform: translateY(0) scale(1);
+                }
+                100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(1.5);
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div class="box">
+        <h1> anh có điều muốn nói </h1>
+        <p>Em làm người yêu anh nhé?</p>
+
+        <button class="yes" onclick="dongY()">Đồng ý </button>
+        <button class="no" id="noBtn">Từ chối</button>
+</div>
+
+<script>
+   const noBtn = document.getElementById("noBtn");
+
+   noBtn.addEventListener("mouseover", chayTron);
+
+   function chayTron() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.immerheiht - noBtn.offsetHeight);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+   }
+
+   function dongY() {
+    alert("Anh biết mà yêu em nhiều lắm");
+   }
+</script>
+
+</body>
+</html>
